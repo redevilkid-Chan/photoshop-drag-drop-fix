@@ -147,6 +147,46 @@ Found a new root cause or fix path? Issues and PRs welcome. Common improvements 
 - Translations of `SKILL.md` (the agent-facing instruction) into additional languages
 - Better Process Elevation detection methods (PowerShell snippets, etc.)
 
+## 🔗 Related Work
+
+Three categories of adjacent projects exist; none directly solves "Photoshop can't drag-drop files" on Windows.
+
+### 🔌 Programmatic Photoshop Control (a different problem — agents driving PS)
+
+| Project | What it does | Why it's not us |
+|---|---|---|
+| [`LissaGreense/photoshop-uxp`](https://github.com/LissaGreense/photoshop-uxp) | Agent Skill that drives PS via UXP scripting | Operates PS *inside*; does not fix drag-drop *into* PS |
+| [`00bx/00bx-photoshop-mcp`](https://github.com/00bx/00bx-photoshop-mcp) | Photoshop MCP server, 323 automation tools | Same — automation, not drag-drop repair |
+| [`Vaxaxas/photoshop-mcp-windows-first`](https://github.com/Vaxaxas/photoshop-mcp-windows-first) | Windows-first PS MCP | Same |
+| [`pangxie231/ps-mcp`](https://github.com/pangxie231/ps-mcp) | Photoshop MCP | Same |
+
+### 🪟 Windows-level Drag-Drop Fixes (different app, same root cause)
+
+These projects fix drag-drop for **other** Windows apps. They share the EnableLUA / admin-elevation root cause but address different surfaces.
+
+| Project | What it fixes |
+|---|---|
+| [`HerMajestyDrMona/Windows11DragAndDropToTaskbarFix`](https://github.com/HerMajestyDrMona/Windows11DragAndDropToTaskbarFix) | Drag files **to taskbar** in Windows 11 |
+| Microsoft Terminal [#17291](https://github.com/microsoft/terminal/issues/17291) | Drag files **to Terminal** when admin (same root cause) |
+| Files community [#14498](https://github.com/files-community/Files/issues/14498) | Drag-drop crash in Files app when admin (same root cause) |
+
+### ⚠️ Misleading — Tutorials That Get the Fix Backwards
+
+A widely-shared [cnblogs tutorial (2020)](https://www.cnblogs.com/Chary/articles/14139436.html) recommends **setting `EnableLUA = 0`** to fix this exact problem. Microsoft explicitly warns against this: it reduces system security and can break Windows 11 drag-and-drop in *other* ways. This skill sets `EnableLUA = 1` and explicitly warns against the popular wrong fix. If a tutorial put you at `0`, fix it back to `1` and restart.
+
+### How we differ
+
+| Dimension | This skill | Adjacent projects |
+|---|---|---|
+| **Scope** | Diagnose only, never auto-fixes | Mostly tools that modify PS or Windows |
+| **Approach** | 3 ranked steps with fallback (~80% / +12% / +5%) | Single fix or single tool |
+| **Correctness** | `EnableLUA = 1`, explicit warning against `= 0` | Often no direction verification |
+| **Trigger** | Auto-runs on phrases like "Photoshop can't drag" | Manual invocation |
+| **Installation** | Standalone skill, drag-and-drop into skills folder | Usually bundled inside larger tools |
+
+**Use this skill** when: you want to fix drag-drop on PS (or reproduce the diagnostic for another Windows app).
+**Use adjacent projects** when: you want to automate Photoshop work (batch editing, MCP control, scripting).
+
 ## 📄 License
 
 [MIT](./LICENSE) — use, modify, distribute, and build on freely while preserving the license notice.

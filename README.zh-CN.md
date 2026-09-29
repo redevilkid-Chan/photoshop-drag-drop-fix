@@ -147,6 +147,46 @@ photoshop-drag-drop-fix/
 - SKILL.md(agent 看的执行指令)的其他语言翻译
 - 更好的 Photoshop 进程提权检测方法(PowerShell 片段等)
 
+## 🔗 相关项目
+
+三类相近项目存在,**没有任何一个直接解决** "Windows 上 PS 拖不进文件" 这个具体问题。
+
+### 🔌 程序化控制 Photoshop(让 agent **驱动** PS —— 不同的问题)
+
+| 项目 | 它做什么 | 为什么不是我们 |
+|---|---|---|
+| [`LissaGreense/photoshop-uxp`](https://github.com/LissaGreense/photoshop-uxp) | 通过 UXP 脚本驱动 PS 的 Agent Skill | 在 PS *内部* 操作,不是修 PS *入口* 的拖放问题 |
+| [`00bx/00bx-photoshop-mcp`](https://github.com/00bx/00bx-photoshop-mcp) | PS MCP server,323 个自动化工具 | 同 —— 是自动化,不是修拖放 |
+| [`Vaxaxas/photoshop-mcp-windows-first`](https://github.com/Vaxaxas/photoshop-mcp-windows-first) | Windows-first 的 PS MCP | 同 |
+| [`pangxie231/ps-mcp`](https://github.com/pangxie231/ps-mcp) | Photoshop MCP | 同 |
+
+### 🪟 Windows 层拖放修复(其他 app,相同的根因)
+
+这些项目修**其他** Windows app 的拖放,根因(EnableLUA / admin elevation)一样,但目标面不同。
+
+| 项目 | 修什么 |
+|---|---|
+| [`HerMajestyDrMona/Windows11DragAndDropToTaskbarFix`](https://github.com/HerMajestyDrMona/Windows11DragAndDropToTaskbarFix) | 修 Win11 **拖到任务栏**(不是 PS) |
+| Microsoft Terminal [#17291](https://github.com/microsoft/terminal/issues/17291) | 修**管理员运行的 Terminal** 拖文件(同根因) |
+| Files community [#14498](https://github.com/files-community/Files/issues/14498) | 修**管理员运行的 Files** 拖放崩溃(同根因) |
+
+### ⚠️ 错误方向的教程
+
+一篇广泛流传的 [cnblogs 教程(2020)](https://www.cnblogs.com/Chary/articles/14139436.html) 推荐**把 `EnableLUA` 改成 0** 来修这个拖放问题。Microsoft 明确警告:这会降低系统安全,且会让 Windows 11 在**其他场景**的拖放也坏掉。本 skill **把 `EnableLUA` 改回 1**,并明确警告不要走那条错误的路。如果你的注册表因为之前的教程被改到了 0,改回 1 + 重启即可。
+
+### 我们的差异化
+
+| 维度 | 本 skill | 相邻项目 |
+|---|---|---|
+| **作用范围** | 只诊断,绝不自动修复 | 多是直接改 PS 或 Windows 的工具 |
+| **方法** | 3 步排序决策 + 降级(约 80% / +12% / +5%) | 单点修复或单一工具 |
+| **正确性** | `EnableLUA = 1`,**明确警告**不要设 0 | 常无方向校验 |
+| **触发** | 用户说"PS 不能拖"就自动跑 | 需要手动调用 |
+| **安装** | 独立 skill,拖进 skills 目录即可 | 通常绑定在大工具里 |
+
+**用本 skill**:要修 PS 拖放(或想把这个诊断思路用在其他 Windows app)。
+**用相邻项目**:要自动化 PS 工作(批处理、MCP 控制、脚本)。
+
 ## 📄 License
 
 [MIT](./LICENSE) —— 自由使用、修改、分发、衍生,保留许可证声明即可。
