@@ -1,101 +1,89 @@
+<p align="center">
+  <img
+    src="./data/images/banner.png"
+    alt="Photoshop drag and drop not working on Windows 10/11 — 3-step diagnostic fix"
+    width="100%"
+  >
+</p>
+
 <h1 align="center">Photoshop Drag & Drop Fix</h1>
 
 <p align="center">
-  <img src="./data/images/banner.png" alt="Photoshop Drag &amp; Drop Fix — Windows 3-Step Diagnostic Skill" width="800">
+  <strong>Fix “Photoshop drag and drop not working” on Windows 10/11 with a safe 3-step diagnostic decision tree.</strong>
 </p>
 
 <p align="center">
-  <strong>Windows 11/10 · Adobe Photoshop 2026 (27.x) · 3-Step Diagnostic Skill</strong><br>
-  <sub>Diagnose-only by design · No auto-fixes · Waits for explicit user authorization</sub>
+  <sub>Diagnose-only by design · No silent registry edits · No automatic restarts · Every system change requires explicit authorization.</sub>
 </p>
 
 <p align="center">
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/stargazers">
-    <img src="https://img.shields.io/github/stars/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/network/members">
-    <img src="https://img.shields.io/github/forks/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=green" alt="Forks">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=blueviolet" alt="License">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/issues">
-    <img src="https://img.shields.io/github/issues/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=orange" alt="Issues">
-  </a>
-  <img src="https://img.shields.io/badge/Platform-Windows_10%2F11-0078d4?style=flat-square&logo=windows&logoColor=white" alt="Platform">
-  <img src="https://img.shields.io/badge/Compatible-Photoshop_2026_(27.x)-31a8ff?logo=adobephotoshop&logoColor=white&style=flat-square" alt="Photoshop">
-  <img src="https://img.shields.io/badge/Type-Agent_Skill-001eff?style=flat-square" alt="Type">
-  <img src="https://img.shields.io/badge/Diagnose--Only-Yes-success?style=flat-square" alt="Diagnose-Only">
+  <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-1f6feb?style=flat-square" alt="Windows 10/11">
+  <img src="https://img.shields.io/badge/Photoshop-2026%20(27.x)-31a8ff?style=flat-square" alt="Photoshop 2026 (27.x)">
+  <img src="https://img.shields.io/badge/Diagnose--Only-Yes-18a558?style=flat-square" alt="Diagnose-only">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-6f42c1?style=flat-square" alt="MIT License"></a>
 </p>
 
 <p align="center">
-  <strong>English</strong> | <a href="./README.zh-CN.md">简体中文</a>
+  <a href="#does-this-match-your-issue">Is this your issue?</a>
+  ·
+  <a href="#how-it-works">How it works</a>
+  ·
+  <a href="#quick-start">Install</a>
+  ·
+  <a href="#example-session">Example</a>
+  ·
+  <a href="#evidence--references">Evidence</a>
+  ·
+  <a href="#faq">FAQ</a>
+  ·
+  <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
 ---
 
-## 🎯 What This Solves
+## Does this match your issue?
 
-Adobe Photoshop 2026 (27.x) on Windows can suddenly stop accepting drag-and-drop from File Explorer. This skill runs a **3-step decision tree** to find the root cause — and stops at each step to wait for your authorization. **No automatic registry edits, no silent restarts, no file deletions.**
+This skill is designed for the common Windows case where **Photoshop opens normally, but files dragged from File Explorer no longer drop into the Photoshop canvas**.
 
-> **Why diagnose-only?** Windows + Photoshop involve system-level changes (UAC, registry, process elevation). Mistakes here can break unrelated apps. Every step shows you exactly what would change and waits for confirmation.
+It is a strong match when:
 
-## ⚡ Quick Diagnosis
+- Photoshop worked normally before, then drag-and-drop suddenly stopped.
+- JPG / PNG / TIFF files open normally, but dragging them from File Explorer into Photoshop does nothing.
+- You are using **Windows 10 or Windows 11** with **Photoshop 2026 (27.x)**.
+- You want to **diagnose the cause before changing system settings**.
 
-<table>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🪟 Step 1</b></td>
-    <td width="50%" valign="top"><b>EnableLUA Registry Check</b><br>Root cause in ~80% of cases. Microsoft confirms <code>EnableLUA=0</code> breaks Windows 11 drag & drop. <i>Lowest-risk fix: change <code>0</code> → <code>1</code>, restart Windows.</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/Risk-Low-success?style=flat-square" alt="Risk"><br>
-      <img src="https://img.shields.io/badge/Coverage-80%25-1e88e5?style=flat-square" alt="Coverage">
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🛡️ Step 2</b></td>
-    <td width="50%" valign="top"><b>Photoshop Process Elevation</b><br>Adobe Community–verified root cause: Photoshop must <i>not</i> run as administrator. <i>Low-risk fix: uncheck "Run as administrator" in PS shortcut properties.</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/Risk-Low-success?style=flat-square" alt="Risk"><br>
-      <img src="https://img.shields.io/badge/Coverage-+12%25-1e88e5?style=flat-square" alt="Coverage">
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🔄 Step 3</b></td>
-    <td width="50%" valign="top"><b>Preferences Reset + Explorer Restart</b><br>Reset Photoshop preferences (Ctrl+Alt+Shift on launch) and restart Windows Explorer. <i>Medium-risk: resets PS customizations; backup is recommended first.</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/Risk-Medium-orange?style=flat-square" alt="Risk"><br>
-      <img src="https://img.shields.io/badge/Coverage-+5%25-1e88e5?style=flat-square" alt="Coverage">
-    </td>
-  </tr>
-</table>
+> **Not a general Photoshop repair tool.**  
+> It does not troubleshoot activation, crashes, performance, missing plugins, or unrelated Adobe applications.
 
-If all three steps pass and the issue persists, the skill runs a **fallback Explorer → Notepad three-way drag test** to isolate whether the problem is at the Windows drag layer or the Photoshop receiver layer.
+---
 
-## 📦 Scope
+## How it works
 
-<table>
-<tr><th width="50%">✅ Handled</th><th width="50%">❌ Out of Scope</th></tr>
-<tr><td valign="top">
+The skill moves from the safest, highest-signal checks to more disruptive fallback steps.
 
-- Windows 10 / 11 + Photoshop 2026 (27.x) desktop
-- Drag JPG / PNG / TIFF from File Explorer → PS canvas fails
-- "Suddenly broke" cases (was working yesterday)
-- Both 32-bit and 64-bit Photoshop installations
+```mermaid
+flowchart LR
+    A["01 · Windows<br/>EnableLUA / UAC"] --> B["02 · Photoshop<br/>Process elevation"]
+    B --> C["03 · Reset & isolate<br/>Preferences / Explorer"]
+    C --> D["Fallback<br/>Explorer → Notepad test"]
+```
 
-</td><td valign="top">
+| Step | What it checks | Why it matters | Change risk |
+|---|---|---|---|
+| **01 · Windows** | `EnableLUA` / UAC state | Drag-and-drop can fail when Windows integrity / elevation behavior is altered | Low |
+| **02 · Photoshop** | Photoshop executable and shortcut elevation | A privilege-level mismatch can block drag-and-drop between processes | Low |
+| **03 · Reset & isolate** | Photoshop preferences + Windows Explorer | Separates app-state problems from Windows drag-layer problems | Medium |
+| **Fallback** | Explorer → Notepad three-way drag test | Helps isolate whether Windows or Photoshop is the receiver-side failure | None |
 
-- macOS (different sandbox model)
-- Illustrator / InDesign / Premiere / After Effects
-- Non-Adobe apps with broken Windows drag-and-drop
-- Photoshop installation / activation / crash / performance issues
-- File format incompatibility (RAW / HEIF requiring plugins)
+The skill **stops before every change** and asks for authorization.
 
-</td></tr>
-</table>
+---
 
-## 🚀 Installation
+## Quick Start
 
-Copy the entire `photoshop-drag-drop-fix/` folder into your skills directory:
+### 1. Install the skill
+
+Copy the entire repository folder into the skills directory used by your agent:
 
 | Agent | Path |
 |---|---|
@@ -103,49 +91,312 @@ Copy the entire `photoshop-drag-drop-fix/` folder into your skills directory:
 | **Claude Code** | `~/.claude/skills/photoshop-drag-drop-fix/` |
 | **Cursor / other** | `~/.opencode/skills/photoshop-drag-drop-fix/` |
 
-The skill loads automatically on next session.
+The skill loads automatically on the next session.
 
-## 🗣️ Trigger Phrases
+### 2. Describe the symptom naturally
 
-Any of these will activate this skill:
-
-- "Photoshop won't accept drops"
-- "PS can't drag files"
-- "photoshop drag drop not working"
-- "Files dragged to PS don't respond"
-- "photoshop can't drag"
-- 中文: "Photoshop 拖不进去" / "PS 不能拖文件" / "拖文件到 PS 没反应"
-
-## 🧠 Design Principles
-
-1. **Diagnose ≠ Fix** — Never runs `reg add`, restarts the computer, or deletes files on its own. Each step reports the conclusion and shows the fix command; you confirm before anything runs.
-2. **Never sets `EnableLUA` to 0** — Common in web tutorials, but Microsoft explicitly forbids this. It reduces system security AND can break Windows 11 drag & drop.
-3. **Most common → most obscure** — Three steps ordered by decreasing probability (80% → ~12% → ~5%). You can exit after any step.
-4. **Explicit boundaries** — No macOS fixes, no other Adobe apps, no pressing keys on your behalf.
-
-## 📁 File Structure
-
+```text
+Photoshop drag and drop is not working on Windows 11.
+Files open normally, but dragging a JPG from Explorer into Photoshop does nothing.
+Diagnose it without changing anything automatically.
 ```
+
+You can also use shorter prompts such as:
+
+```text
+Photoshop won't accept drops.
+```
+
+```text
+PS can't drag files from Explorer.
+```
+
+```text
+Photoshop 拖不进去图片，帮我先诊断，不要自动修改系统。
+```
+
+---
+
+## Example Session
+
+```text
+You:
+Photoshop suddenly stopped accepting files dragged from Explorer.
+
+Agent:
+I'll diagnose the drag-and-drop path without making system changes.
+
+Step 1/3 — Check Windows UAC / EnableLUA
+Result: EnableLUA = 0
+
+A likely cause has been found.
+
+Recommended change:
+EnableLUA: 0 → 1
+A Windows restart is required for the change to take effect.
+
+Apply this change? [Yes / No]
+```
+
+The important behavior is the last line: **diagnosis and remediation are separate actions**.
+
+---
+
+## Detailed Diagnosis
+
+<details>
+<summary><strong>01 · Windows — EnableLUA / UAC</strong></summary>
+
+The first check inspects:
+
+```text
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+EnableLUA
+```
+
+Expected state:
+
+```text
+EnableLUA = 1
+```
+
+If the value is `0`, the skill reports the finding and can recommend changing it to `1`.
+
+It does **not** make that registry change silently.
+
+A restart is required after changing `EnableLUA`.
+
+Microsoft documents `EnableLUA=1` as the default UAC configuration and does not recommend disabling it.
+
+</details>
+
+<details>
+<summary><strong>02 · Photoshop — Process Elevation</strong></summary>
+
+The second check looks for Photoshop being launched at a different privilege level from File Explorer.
+
+Typical places to inspect:
+
+- `Photoshop.exe`
+- Photoshop shortcut properties
+- Taskbar-pinned shortcut compatibility settings
+- **Run this program as an administrator**
+
+If Photoshop is forced to run elevated while Explorer is not, drag-and-drop can be blocked by Windows process-integrity boundaries.
+
+The skill reports the state first and asks before suggesting a compatibility-setting change.
+
+</details>
+
+<details>
+<summary><strong>03 · Photoshop Preferences + Explorer</strong></summary>
+
+If the first two checks do not explain the failure, the skill moves to application-state and shell-state checks.
+
+Possible actions include:
+
+- Reset Photoshop preferences using `Ctrl + Alt + Shift` during launch.
+- Restart Windows Explorer.
+- Retest drag-and-drop.
+
+This is treated as a **higher-impact step** because resetting Photoshop preferences can remove user customizations.
+
+Back up important Photoshop preferences before proceeding.
+
+</details>
+
+<details>
+<summary><strong>Fallback · Explorer → Notepad Isolation Test</strong></summary>
+
+If all three checks pass and Photoshop still rejects drops, the skill uses a three-way drag test to isolate the failing layer.
+
+The goal is to determine whether:
+
+1. Windows drag-and-drop is failing generally, or
+2. Photoshop is specifically failing as the drop receiver.
+
+This keeps the troubleshooting tree focused instead of escalating blindly.
+
+</details>
+
+---
+
+## Scope
+
+<table>
+<tr>
+<th width="50%">Supported</th>
+<th width="50%">Not supported</th>
+</tr>
+<tr>
+<td valign="top">
+
+- Windows 10 / 11
+- Photoshop 2026 (27.x) desktop
+- File Explorer → Photoshop canvas drag failures
+- JPG / PNG / TIFF drag tests
+- “It worked before and suddenly stopped” cases
+- Diagnose-first workflows
+
+</td>
+<td valign="top">
+
+- macOS
+- Illustrator / InDesign / Premiere / After Effects
+- Photoshop installation or activation
+- Photoshop crashes or performance tuning
+- General Windows drag-and-drop failures unrelated to Photoshop
+- RAW / HEIF plugin or format compatibility problems
+
+</td>
+</tr>
+</table>
+
+---
+
+## Safety Model
+
+### Diagnose first
+
+The skill checks the system state before suggesting any remediation.
+
+### Ask before changing
+
+It does not automatically:
+
+- run `reg add`
+- restart Windows
+- restart Explorer
+- delete files
+- reset Photoshop preferences
+
+### Never disable UAC as a “fix”
+
+The skill must **never set `EnableLUA` to `0`**.
+
+If `EnableLUA=0` is detected, the diagnostic direction is toward restoring the default enabled state, not disabling more Windows security behavior.
+
+---
+
+## Evidence & References
+
+The diagnostic tree is grounded in Windows UAC behavior, Adobe troubleshooting guidance, and documented community cases. These references support the **mechanisms and checks** used by the skill; they should not be read as proof that one root cause explains every Photoshop drag-and-drop failure.
+
+- **Microsoft Learn — EnableLUA**  
+  https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-lua-settings-enablelua  
+  Microsoft documents `EnableLUA=true` as the default and says disabling it is not recommended.
+
+- **Microsoft Learn — User Account Control settings and configuration**  
+  https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration  
+  Documents `EnableLUA` / Admin Approval Mode and related UAC policy behavior.
+
+- **Microsoft Q&A — Drag to taskbar stopped working with LUA/UAC disabled**  
+  https://learn.microsoft.com/en-us/answers/questions/3917740/drag-to-taskbar-stopped-working-after-update-from  
+  A Windows 11 case where re-enabling `EnableLUA` restored drag behavior.
+
+- **Adobe — Troubleshoot Photoshop droplets on Windows**  
+  https://helpx.adobe.com/photoshop/kb/troubleshoot-photoshop-droplets-windows.html  
+  Adobe notes that interacting processes need compatible User Account Control levels.
+
+- **Adobe Community — Unable to drag files into Photoshop CC**  
+  https://community.adobe.com/t5/photoshop-ecosystem-discussions/unable-to-drag-files-into-photoshop-cc/m-p/8790295  
+  A documented case where a taskbar shortcut configured to run Photoshop as administrator caused drag-and-drop to fail.
+
+---
+
+## FAQ
+
+### Why can't I drag and drop files into Photoshop on Windows 11?
+
+Several mechanisms can produce the same symptom. This skill focuses on three high-signal areas: Windows UAC / `EnableLUA`, Photoshop process elevation, and Photoshop / Explorer state.
+
+### Why did Photoshop drag and drop suddenly stop working?
+
+A changed Windows policy, shortcut compatibility setting, Photoshop preference state, or Explorer state can alter a workflow that previously worked. The decision tree checks these areas in sequence rather than applying random fixes.
+
+### Can running Photoshop as Administrator affect drag and drop?
+
+Yes, privilege-level differences between the drag source and the drop target can affect Windows drag-and-drop behavior. The skill checks both the Photoshop executable and shortcut settings instead of assuming one launch path.
+
+### What is EnableLUA?
+
+`EnableLUA` is a Windows policy value associated with User Account Control and Admin Approval Mode.
+
+The default is:
+
+```text
+EnableLUA = 1
+```
+
+This skill never recommends setting it to `0`.
+
+### Does this skill edit the registry automatically?
+
+No. It is **diagnose-only by design**. Registry changes, restarts, and preference resets require explicit user authorization.
+
+### Does this work with Photoshop 2025 or future Photoshop versions?
+
+The diagnostic logic may still be useful, but this repository is scoped to the environment verified at creation time: **Photoshop 2026 (27.x) on Windows 10/11**.
+
+Future Adobe or Windows changes may require the decision tree to be updated.
+
+### Does this work on macOS?
+
+No. macOS uses a different permissions and sandbox model and is outside this skill's scope.
+
+---
+
+## Trigger Phrases
+
+<details>
+<summary>Examples that should activate the skill</summary>
+
+```text
+Photoshop won't accept drops
+PS can't drag files
+photoshop drag drop not working
+can't drag image into photoshop
+Files dragged to PS don't respond
+photoshop can't drag
+Photoshop 拖不进去
+PS 不能拖文件
+拖文件到 PS 没反应
+```
+
+</details>
+
+---
+
+## Repository Structure
+
+<details>
+<summary>Files in this repository</summary>
+
+```text
 photoshop-drag-drop-fix/
-├── SKILL.md            # Agent-facing execution instructions
-├── README.md           # English documentation (this file)
-├── README.zh-CN.md     # 中文文档
-└── LICENSE             # MIT License
+├── SKILL.md                  # Agent-facing execution instructions (3-step decision tree)
+├── README.md                 # English documentation (this file)
+├── README.zh-CN.md           # 中文文档
+├── LICENSE                   # MIT License
+├── data/
+│   └── images/
+│       └── banner.png        # GitHub README hero banner (1920×576)
+├── prompts/
+│   └── banner-versions.md    # GPT Image prompts for regenerating the banner (3 distinct styles)
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md     # Structured bug report
+│       ├── feature_request.md
+│       └── config.yml        # Disables blank issues, points to docs
+├── prompts/banner-versions.md
+└── (no source code — pure documentation skill)
 ```
 
-For step-by-step execution details, see [SKILL.md](./SKILL.md).
+</details>
 
-## ⚠️ Scope of Validity
+For agent execution details, see **[SKILL.md](./SKILL.md)**.
 
-Tested only against the environment verified at skill creation time. Future Adobe versions (e.g. PS 28.x) may change the drag receiver mechanism, requiring skill updates. If Microsoft alters the `EnableLUA` default in future Windows releases, the Step 1 verdict logic must be revisited.
-
-## 🤝 Contributing
-
-Found a new root cause or fix path? Issues and PRs welcome. Common improvements that would help:
-
-- New root cause entries with Microsoft / Adobe documentation references
-- Translations of `SKILL.md` (the agent-facing instruction) into additional languages
-- Better Process Elevation detection methods (PowerShell snippets, etc.)
+---
 
 ## 🔗 Related Work
 
@@ -187,16 +438,55 @@ A widely-shared [cnblogs tutorial (2020)](https://www.cnblogs.com/Chary/articles
 **Use this skill** when: you want to fix drag-drop on PS (or reproduce the diagnostic for another Windows app).
 **Use adjacent projects** when: you want to automate Photoshop work (batch editing, MCP control, scripting).
 
-## 📄 License
+---
 
-[MIT](./LICENSE) — use, modify, distribute, and build on freely while preserving the license notice.
+## Scope of Validity
+
+This skill was tested against the environment verified at creation time.
+
+Changes to any of the following may require updates:
+
+- Photoshop major-version behavior
+- Windows UAC defaults
+- Windows Explorer drag-and-drop behavior
+- Adobe process-elevation behavior
+
+If Photoshop 28.x or a future Windows release changes the drag receiver mechanism, the decision tree should be revalidated before its conclusions are treated as current.
 
 ---
 
-## ⭐ Star History
+## Contributing
+
+Found another reproducible root cause or a better detection path?
+
+Issues and pull requests are welcome, especially for:
+
+- New root causes backed by Microsoft or Adobe documentation
+- Reproducible Windows / Photoshop version-specific cases
+- Better process-elevation detection methods
+- Safer PowerShell diagnostics
+- Additional `SKILL.md` translations
+- Improvements to the fallback isolation test
+
+When proposing a new fix path, include:
+
+1. Environment and version
+2. Reproduction steps
+3. Observed state
+4. Proposed diagnostic check
+5. Evidence / documentation
+6. Whether the step changes system state
+
+---
+
+## License
+
+**MIT License** — use, modify, distribute, and build on this project while preserving the license notice.
+
+See **[LICENSE](./LICENSE)**.
+
+---
 
 <p align="center">
-  <a href="https://star-history.com/#redevilkid-Chan/photoshop-drag-drop-fix&Date">
-    <img src="https://api.star-history.com/svg?repos=redevilkid-Chan/photoshop-drag-drop-fix&type=Date" alt="Star History Chart" width="600">
-  </a>
+  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
 </p>

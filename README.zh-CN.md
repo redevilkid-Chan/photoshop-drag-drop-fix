@@ -1,101 +1,90 @@
+<p align="center">
+  <img
+    src="./data/images/banner.png"
+    alt="Photoshop 拖拽文件失败,Windows 10/11 修复 — 3 步诊断"
+    width="100%"
+  >
+</p>
+
 <h1 align="center">Photoshop 拖放修复</h1>
 
 <p align="center">
-  <img src="./data/images/banner.png" alt="Photoshop 拖放修复 — Windows 3 步诊断 Skill" width="800">
+  <strong>用安全的 3 步诊断决策树,修复 Windows 10/11 上"Photoshop 拖拽文件没反应"的问题。</strong>
 </p>
 
 <p align="center">
-  <strong>Windows 11/10 · Adobe Photoshop 2026 (27.x) · 3 步诊断 Skill</strong><br>
-  <sub>只诊断不修复 · 不自动执行 · 每一步等用户授权</sub>
+  <sub>只诊断不修复 · 不会静默改注册表 · 不会自动重启 · 每次系统变更都要用户授权</sub>
 </p>
 
 <p align="center">
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/stargazers">
-    <img src="https://img.shields.io/github/stars/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/network/members">
-    <img src="https://img.shields.io/github/forks/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=green" alt="Forks">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=blueviolet" alt="License">
-  </a>
-  <a href="https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/issues">
-    <img src="https://img.shields.io/github/issues/redevilkid-Chan/photoshop-drag-drop-fix?style=flat-square&color=orange" alt="Issues">
-  </a>
-  <img src="https://img.shields.io/badge/平台-Windows_10%2F11-0078d4?style=flat-square&logo=windows&logoColor=white" alt="平台">
-  <img src="https://img.shields.io/badge/兼容-Photoshop_2026_(27.x)-31a8ff?logo=adobephotoshop&logoColor=white&style=flat-square" alt="PS版本">
-  <img src="https://img.shields.io/badge/类型-Agent_Skill-001eff?style=flat-square" alt="类型">
-  <img src="https://img.shields.io/badge/只诊断-是-success?style=flat-square" alt="诊断模式">
+  <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-1f6feb?style=flat-square" alt="Windows 10/11">
+  <img src="https://img.shields.io/badge/Photoshop-2026%20(27.x)-31a8ff?style=flat-square" alt="Photoshop 2026 (27.x)">
+  <img src="https://img.shields.io/badge/只诊断-是-18a558?style=flat-square" alt="只诊断">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-6f42c1?style=flat-square" alt="MIT License"></a>
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> | <strong>简体中文</strong>
+  <a href="#这是你的问题吗">这是你的问题吗</a>
+  ·
+  <a href="#工作原理">工作原理</a>
+  ·
+  <a href="#快速开始">安装</a>
+  ·
+  <a href="#示例会话">示例</a>
+  ·
+  <a href="#证据与参考">证据</a>
+  ·
+  <a href="#常见问题">FAQ</a>
+  ·
+  <a href="./README.md">English</a>
 </p>
 
 ---
 
-## 🎯 这个 Skill 解决什么
+## 这是你的问题吗?
 
-Adobe Photoshop 2026 (27.x) 在 Windows 桌面上突然不能从文件资源管理器拖入文件了?这个 skill 跑一遍 **3 步决策树** 帮你定位根因——**每一步停下等你授权**,绝不自动改注册表、自动重启、自动删文件。
+本 skill 面向 Windows 上最常见的情况:**Photoshop 打开正常,但从文件资源管理器拖入文件时不再响应**。
 
-> **为什么只诊断不修复?** Windows + Photoshop 涉及系统级变更(UAC、注册表、进程提权)。操作失误可能波及无关软件。每一步都把"会改什么"摊给你看,等你确认才动。
+强匹配场景:
 
-## ⚡ 快速诊断卡
+- 之前 Photoshop 用着正常,突然拖放失效。
+- JPG / PNG / TIFF 文件能正常打开,但从资源管理器拖到 PS 画布没反应。
+- 你用的是 **Windows 10 或 Windows 11**,配合 **Photoshop 2026 (27.x)**。
+- 你想**先诊断原因再改系统设置**。
 
-<table>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🪟 第 1 步</b></td>
-    <td width="50%" valign="top"><b>检查 EnableLUA 注册表</b><br>~80% 案例的根因。Microsoft 官方确认 <code>EnableLUA=0</code> 会破坏 Windows 11 拖放。<i>低风险修复:把 <code>0</code> 改成 <code>1</code>,重启 Windows。</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/风险-低-success?style=flat-square" alt="风险"><br>
-      <img src="https://img.shields.io/badge/覆盖-80%25-1e88e5?style=flat-square" alt="覆盖率">
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🛡️ 第 2 步</b></td>
-    <td width="50%" valign="top"><b>检查 Photoshop 进程提权</b><br>Adobe 社区验证过的另一根因:Photoshop <i>不能</i> 以管理员身份运行。<i>低风险修复:PS 快捷方式属性里取消勾选"以管理员身份运行"。</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/风险-低-success?style=flat-square" alt="风险"><br>
-      <img src="https://img.shields.io/badge/覆盖-+12%25-1e88e5?style=flat-square" alt="覆盖率">
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="middle"><b>🔄 第 3 步</b></td>
-    <td width="50%" valign="top"><b>PS 首选项重置 + Explorer 重启</b><br>启动时按 <code>Ctrl+Alt+Shift</code> 重置 PS 首选项 + 重启 Windows 资源管理器。<i>中风险:会清掉 PS 自定义设置,建议先备份。</i></td>
-    <td width="30%" valign="middle" align="center">
-      <img src="https://img.shields.io/badge/风险-中-orange?style=flat-square" alt="风险"><br>
-      <img src="https://img.shields.io/badge/覆盖-+5%25-1e88e5?style=flat-square" alt="覆盖率">
-    </td>
-  </tr>
-</table>
+> **不是 PS 通用修复工具**。
+>
+> 不修激活、崩溃、性能、缺失插件、其他 Adobe 应用等问题。
 
-如果前三步全过仍失败,降级到 **Explorer → 记事本 三方拖放测试**,精确区分问题在 Windows 拖放层还是 Photoshop 接收层。
+---
 
-## 📦 适用范围
+## 工作原理
 
-<table>
-<tr><th width="50%">✅ 处理</th><th width="50%">❌ 不处理</th></tr>
-<tr><td valign="top">
+本 skill 按"最安全、最高信号"到"破坏性更强"的顺序逐级排查。
 
-- Windows 10 / 11 + Photoshop 2026 (27.x) 桌面版
-- 文件资源管理器 → PS 画布拖 JPG / PNG / TIFF 没反应
-- "昨天还能用,今天突然不行"的场景
-- 32 位与 64 位 PS 安装都覆盖
+```mermaid
+flowchart LR
+    A["01 · Windows<br/>EnableLUA / UAC"] --> B["02 · Photoshop<br/>进程提权"]
+    B --> C["03 · 重置 + 隔离<br/>首选项 / Explorer"]
+    C --> D["降级<br/>Explorer → 记事本"]
+```
 
-</td><td valign="top">
+| 步骤 | 检查项 | 为什么重要 | 变更风险 |
+|---|---|---|---|
+| **01 · Windows** | `EnableLUA` / UAC 状态 | Windows 完整性 / 提权行为被改动时,拖放会失效 | 低 |
+| **02 · Photoshop** | PS 可执行文件 + 快捷方式提权 | 跨进程权限级别不匹配会阻断拖放 | 低 |
+| **03 · 重置 + 隔离** | PS 首选项 + Windows 资源管理器 | 区分"应用状态问题"和"Windows 拖放层问题" | 中 |
+| **降级** | Explorer → 记事本三方拖放测试 | 隔离"Windows 拖放整体失败"还是"PS 作为接收方失败" | 无 |
 
-- macOS(沙箱模型完全不同)
-- Illustrator / InDesign / Premiere / After Effects
-- 非 Adobe 软件的 Windows 拖放问题
-- PS 安装/激活/崩溃/性能问题
-- 文件格式不兼容(RAW / HEIF 需装插件)
+skill **每次变更前都会停下,等用户授权**。
 
-</td></tr>
-</table>
+---
 
-## 🚀 安装
+## 快速开始
 
-把整个 `photoshop-drag-drop-fix/` 文件夹复制到 skills 目录:
+### 1. 安装 skill
+
+把整个 repo 文件夹复制到你的 agent 用的 skills 目录:
 
 | Agent | 路径 |
 |---|---|
@@ -105,47 +94,306 @@ Adobe Photoshop 2026 (27.x) 在 Windows 桌面上突然不能从文件资源管�
 
 下次会话启动时自动加载。
 
-## 🗣️ 触发词
+### 2. 用自然语言描述症状
 
-任意一句即激活:
-
-- 「Photoshop 拖不进去」
-- 「PS 不能拖文件」
-- 「photoshop drag drop 不行」
-- 「拖文件到 PS 没反应」
-- 「photoshop can't drag」
-- English: "Photoshop won't accept drops" / "PS can't drag files" / "photoshop drag drop not working"
-
-## 🧠 设计原则
-
-1. **诊断 ≠ 修复** —— 绝不替你跑 `reg add`、重启电脑、删文件。每一步出结论 + 给修复命令,等你确认才动。
-2. **绝不把 `EnableLUA` 改成 0** —— 网络教程常见做法,但 Microsoft 明确禁止——会降低系统安全,且 Windows 11 上反而可能破坏拖放。
-3. **从最常见到最冷门** —— 三步顺序对应概率从 80% 递减。允许中途任意一步退出。
-4. **明确边界** —— 不修 macOS / 不修其他 Adobe 应用 / 不替你按任何按键。
-
-## 📁 文件结构
-
+```text
+Windows 11 上 Photoshop 不能拖拽。
+文件能正常打开,但从资源管理器拖一张 JPG 进 PS 没反应。
+先帮我诊断,不要自动改系统。
 ```
+
+也可以用更短的提示:
+
+```text
+Photoshop 拖不进去图片。
+```
+
+```text
+PS 不能拖文件。
+```
+
+```text
+Photoshop can't drag files from Explorer.
+```
+
+---
+
+## 示例会话
+
+```text
+你:
+Photoshop 突然不能接收从资源管理器拖进来的文件了。
+
+Agent:
+我会诊断拖放路径,但不会自动改任何系统设置。
+
+Step 1/3 — 检查 Windows UAC / EnableLUA
+结果:EnableLUA = 0
+
+找到可能的原因了。
+
+建议的变更:
+EnableLUA:0 → 1
+此变更需要重启 Windows 才能生效。
+
+应用此变更?[Yes / No]
+```
+
+最后一行是关键行为:**诊断和修复是两个独立动作**。
+
+---
+
+## 详细诊断
+
+<details>
+<summary><strong>01 · Windows — EnableLUA / UAC</strong></summary>
+
+第一步检查:
+
+```text
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+EnableLUA
+```
+
+预期状态:
+
+```text
+EnableLUA = 1
+```
+
+如果值是 `0`,skill 会报告发现,并建议改为 `1`。
+
+**不会**静默执行注册表变更。
+
+改 `EnableLUA` 后必须重启。
+
+Microsoft 文档确认 `EnableLUA=1` 是 UAC 默认状态,且不建议关闭。
+
+</details>
+
+<details>
+<summary><strong>02 · Photoshop — 进程提权</strong></summary>
+
+第二步检查 PS 是否以与文件资源管理器不同的权限级别启动。
+
+检查位置:
+
+- `Photoshop.exe`
+- PS 快捷方式属性
+- 任务栏固定快捷方式的兼容性设置
+- **"以管理员身份运行此程序"**
+
+如果 PS 被强制以管理员权限运行,而资源管理器不是,Windows 的进程完整性边界会阻止拖放。
+
+skill 会先报告状态,再询问是否修改兼容性设置。
+
+</details>
+
+<details>
+<summary><strong>03 · PS 首选项 + Explorer</strong></summary>
+
+如果前两步没解释问题,skill 进入"应用状态"和"shell 状态"排查。
+
+可能的操作:
+
+- 启动时按 `Ctrl + Alt + Shift` 重置 PS 首选项
+- 重启 Windows 资源管理器
+- 重试拖放
+
+这是**影响较高的一步**,因为重置 PS 首选项会清掉用户的自定义。
+
+操作前先备份 PS 首选项。
+
+</details>
+
+<details>
+<summary><strong>降级 · Explorer → 记事本隔离测试</strong></summary>
+
+如果前三步全部通过,PS 还是收不到文件,skill 用三方拖放测试隔离故障层。
+
+目标:判断到底是
+
+1. Windows 拖放整体失效,还是
+2. PS 单独作为接收方失败
+
+这让排查树保持聚焦,而不是盲目升级操作。
+
+</details>
+
+---
+
+## 适用范围
+
+<table>
+<tr>
+<th width="50%">✅ 处理</th>
+<th width="50%">❌ 不处理</th>
+</tr>
+<tr>
+<td valign="top">
+
+- Windows 10 / 11
+- Photoshop 2026 (27.x) 桌面版
+- 文件资源管理器 → PS 画布 拖放失败
+- JPG / PNG / TIFF 拖放测试
+- "之前能用,突然失效"的场景
+- 优先诊断的工作流
+
+</td>
+<td valign="top">
+
+- macOS
+- Illustrator / InDesign / Premiere / After Effects
+- PS 安装或激活
+- PS 崩溃或性能调优
+- 与 PS 无关的 Windows 拖放问题
+- RAW / HEIF 插件或格式兼容问题
+
+</td>
+</tr>
+</table>
+
+---
+
+## 安全模型
+
+### 先诊断
+
+skill 在建议修复前先检查系统状态。
+
+### 改之前必问
+
+它**不会**自动:
+
+- 跑 `reg add`
+- 重启 Windows
+- 重启 Explorer
+- 删文件
+- 重置 PS 首选项
+
+### 永远不把"关闭 UAC"当修复
+
+skill **永远不把 `EnableLUA` 改成 `0`**。
+
+如果检测到 `EnableLUA=0`,诊断方向是恢复**启用**默认,不是关闭更多 Windows 安全行为。
+
+---
+
+## 证据与参考
+
+诊断树基于 Windows UAC 行为、Adobe 排错指南和已记录在案的社区案例。下面的参考支撑本 skill 使用的**机制与检查**;它们不能被理解为"某个根因能解释所有 Photoshop 拖放失败"的证明。
+
+- **Microsoft Learn — EnableLUA**  
+  https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-lua-settings-enablelua  
+  Microsoft 文档确认 `EnableLUA=true` 是默认,且不建议关闭。
+
+- **Microsoft Learn — User Account Control settings and configuration**  
+  https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration  
+  文档说明 `EnableLUA` / Admin Approval Mode 及相关 UAC 策略行为。
+
+- **Microsoft Q&A — Drag to taskbar stopped working with LUA/UAC disabled**  
+  https://learn.microsoft.com/en-us/answers/questions/3917740/drag-to-taskbar-stopped-working-after-update-from  
+  一个 Win11 案例:重新启用 `EnableLUA` 后拖放恢复。
+
+- **Adobe — Troubleshoot Photoshop droplets on Windows**  
+  https://helpx.adobe.com/photoshop/kb/troubleshoot-photoshop-droplets-windows.html  
+  Adobe 说明:交互进程需要匹配的 UAC 权限级别。
+
+- **Adobe Community — Unable to drag files into Photoshop CC**  
+  https://community.adobe.com/t5/photoshop-ecosystem-discussions/unable-to-drag-files-into-photoshop-cc/m-p/8790295  
+  一个有记录的案例:任务栏快捷方式被设成以管理员身份启动 PS,导致拖放失效。
+
+---
+
+## 常见问题
+
+### Windows 11 上为什么不能拖拽文件到 Photoshop?
+
+同一个症状可能由多种机制导致。本 skill 聚焦 3 个高信号区域:Windows UAC / `EnableLUA`、PS 进程提权、PS / Explorer 状态。
+
+### Photoshop 拖放为什么突然失效?
+
+Windows 策略变更、快捷方式兼容性设置、PS 首选项状态、Explorer 状态都可能改变原本能用的工作流。决策树按顺序排查这些区域,而不是盲目套修复。
+
+### 以管理员身份运行 PS 会影响拖放吗?
+
+会。拖拽源和放下目标的权限级别差异会影响 Windows 拖放行为。本 skill 同时检查 PS 可执行文件和快捷方式设置,而不是假设某一种启动方式。
+
+### 什么是 EnableLUA?
+
+`EnableLUA` 是 Windows 关联 UAC 和 Admin Approval Mode 的策略值。
+
+默认是:
+
+```text
+EnableLUA = 1
+```
+
+本 skill 永远不推荐改成 `0`。
+
+### 这个 skill 会自动改注册表吗?
+
+不会。**设计上只诊断**。注册表变更、重启、首选项重置都要用户显式授权。
+
+### 这个 skill 能在 Photoshop 2025 或更新版本上用吗?
+
+诊断逻辑可能仍有用,但本 repo 范围限定在创建时验证过的环境:**Windows 10/11 + Photoshop 2026 (27.x)**。
+
+未来 Adobe 或 Windows 变更可能需要更新决策树。
+
+### macOS 能用吗?
+
+不能。macOS 用的是完全不同的权限 / 沙箱模型,在本 skill 范围外。
+
+---
+
+## 触发词
+
+<details>
+<summary>应激活本 skill 的表达</summary>
+
+```text
+Photoshop 拖不进去
+PS 不能拖文件
+photoshop drag drop not working
+can't drag image into photoshop
+拖文件到 PS 没反应
+photoshop can't drag
+```
+
+</details>
+
+---
+
+## 仓库结构
+
+<details>
+<summary>本仓库的文件</summary>
+
+```text
 photoshop-drag-drop-fix/
-├── SKILL.md            # agent 看的执行指令
-├── README.md           # English documentation
-├── README.zh-CN.md     # 本文件
-└── LICENSE             # MIT License
+├── SKILL.md                  # agent 看的执行指令(3 步决策树)
+├── README.md                 # English documentation
+├── README.zh-CN.md           # 中文文档(本文件)
+├── LICENSE                   # MIT License
+├── data/
+│   └── images/
+│       └── banner.png        # GitHub README hero banner (1920×576)
+├── prompts/
+│   └── banner-versions.md    # 重新生成 banner 的 GPT Image 提示词(3 种不同风格)
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md     # 结构化 bug 报告
+│       ├── feature_request.md
+│       └── config.yml        # 禁用空白 issue,指向文档
+└── (无源代码 — 纯文档 skill)
 ```
 
-详细执行步骤见 [SKILL.md](./SKILL.md)。
+</details>
 
-## ⚠️ 适用范围说明
+agent 执行细节见 **[SKILL.md](./SKILL.md)**。
 
-仅在创建时验证过的环境下测试过。Adobe 后续版本(如 PS 28.x)若修改了拖放接收机制,可能需要适配。如果 Microsoft 变更了 `EnableLUA` 默认值,第 1 步的判定逻辑要重做。
-
-## 🤝 贡献
-
-发现新根因或修复路径?欢迎提 issue / PR。最有帮助的贡献:
-
-- 带 Microsoft / Adobe 官方文档引用 的新根因条目
-- SKILL.md(agent 看的执行指令)的其他语言翻译
-- 更好的 Photoshop 进程提权检测方法(PowerShell 片段等)
+---
 
 ## 🔗 相关项目
 
@@ -187,16 +435,55 @@ photoshop-drag-drop-fix/
 **用本 skill**:要修 PS 拖放(或想把这个诊断思路用在其他 Windows app)。
 **用相邻项目**:要自动化 PS 工作(批处理、MCP 控制、脚本)。
 
-## 📄 License
+---
 
-[MIT](./LICENSE) —— 自由使用、修改、分发、衍生,保留许可证声明即可。
+## 适用范围说明
+
+本 skill 只在创建时验证过的环境下测试。
+
+以下任何一项变更都可能需要更新:
+
+- Photoshop 主版本行为
+- Windows UAC 默认值
+- Windows 资源管理器拖放行为
+- Adobe 进程提权行为
+
+如果 Photoshop 28.x 或未来 Windows 版本改了拖放接收机制,在结论被视为现行前,决策树需要重新验证。
 
 ---
 
-## ⭐ Star History
+## 🤝 贡献
+
+发现新的可复现根因或更好的检测路径?
+
+欢迎提 issue 和 PR,特别欢迎:
+
+- 有 Microsoft / Adobe 官方文档支持的新根因
+- 可复现的 Windows / PS 版本特定案例
+- 更好的进程提权检测方法
+- 更安全的 PowerShell 诊断
+- 更多的 `SKILL.md` 翻译
+- 对降级隔离测试的改进
+
+提新修复路径时,请包含:
+
+1. 环境和版本
+2. 复现步骤
+3. 观察到的状态
+4. 建议的诊断检查
+5. 证据 / 文档
+6. 是否改动系统状态
+
+---
+
+## 📄 许可证
+
+**MIT 许可证** —— 自由使用、修改、分发本项目,保留许可证声明。
+
+见 **[LICENSE](./LICENSE)**。
+
+---
 
 <p align="center">
-  <a href="https://star-history.com/#redevilkid-Chan/photoshop-drag-drop-fix&Date">
-    <img src="https://api.star-history.com/svg?repos=redevilkid-Chan/photoshop-drag-drop-fix&type=Date" alt="Star History Chart" width="600">
-  </a>
+  <a href="./README.md">English</a> · <strong>简体中文</strong>
 </p>
