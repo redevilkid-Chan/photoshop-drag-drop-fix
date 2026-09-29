@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Read SKILL.md first
+    url: https://github.com/redevilkid-Chan/photoshop-drag-drop-fix/blob/main/SKILL.md
+    about: Diagnostic logic and decision tree are documented here. Most questions are answered before you file.
+  - name: 🔗 Related Work
+    url: https://github.com/redevilkid-Chan/photoshop-drag-drop-fix#-related-work
+    about: If you want to automate Photoshop (not fix drag-drop), these MCP/skill projects are more relevant.
