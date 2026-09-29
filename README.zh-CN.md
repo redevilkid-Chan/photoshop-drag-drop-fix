@@ -1,6 +1,10 @@
 <h1 align="center">Photoshop 拖放修复</h1>
 
 <p align="center">
+  <img src="./data/images/banner.svg" alt="Photoshop 拖放修复 — Windows 3 步诊断 Skill" width="800">
+</p>
+
+<p align="center">
   <strong>Windows 11/10 · Adobe Photoshop 2026 (27.x) · 3 步诊断 Skill</strong><br>
   <sub>只诊断不修复 · 不自动执行 · 每一步等用户授权</sub>
 </p>

@@ -1,6 +1,10 @@
 <h1 align="center">Photoshop Drag & Drop Fix</h1>
 
 <p align="center">
+  <img src="./data/images/banner.svg" alt="Photoshop Drag &amp; Drop Fix — Windows 3-Step Diagnostic Skill" width="800">
+</p>
+
+<p align="center">
   <strong>Windows 11/10 · Adobe Photoshop 2026 (27.x) · 3-Step Diagnostic Skill</strong><br>
   <sub>Diagnose-only by design · No auto-fixes · Waits for explicit user authorization</sub>
 </p>
